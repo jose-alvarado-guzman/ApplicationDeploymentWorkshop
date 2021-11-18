@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+  labels:
+    app: web-app
+spec:
+  containers:
+  - name: httpd-container
+    image: httpd:2.4.48
