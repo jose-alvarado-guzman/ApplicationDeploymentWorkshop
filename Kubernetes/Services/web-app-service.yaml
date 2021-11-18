@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web-app-service
+spec:
+  selector:
+    app: web-app
+  ports:
+  - protocol: TCP
+    port: 8080 # port used inside the cluster by the service, redirects to targetPort
+    targetPort: 80 # actual container port where service is running 
+    nodePort: 30080 # external port mapped on host
+  type: NodePort
