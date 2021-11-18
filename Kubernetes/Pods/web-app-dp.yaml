@@ -1,9 +1,11 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: web-app-rs
+  name: web-app-deployment
+  labels:
+    app: web-app
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: web-app
@@ -12,7 +14,7 @@ spec:
     metadata:
       labels:
         app: web-app
-        version: "1.0"  
+        version: "1.0"
     spec:
       containers:
       - name: web-react-container

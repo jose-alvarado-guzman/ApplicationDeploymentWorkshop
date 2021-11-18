@@ -4,6 +4,7 @@ metadata:
   name: web-app-pod
   labels:
     app: web-app
+    version: "1.0"
 spec:
   containers:
   - name: web-app-container
